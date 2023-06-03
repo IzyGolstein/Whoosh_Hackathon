@@ -1,66 +1,34 @@
-# Optimal Electric Scooter Routing Hackathon Solution
+# Optimal Electric Scooter Routing Project
 
-Welcome to the Optimal Electric Scooter Routing Hackathon Solution! 🛴💨
+Welcome to the Optimal Electric Scooter Routing Project! 🛴💨
 
-In this hackathon, we set out to find the absolute best route for electric scooters. We considered all the important stuff like distance, road conditions, traffic, and charging stations. Let's dive into the awesome things we did:
+In this project, we aimed to develop an innovative solution for finding the best routes for electric scooters. Our focus was on optimizing distance, road conditions, traffic, and charging station availability. Let's take a look at the key components of our project:
 
-## What's Inside?
+## Project Overview
 
 1. Data Loading 📊:
-   - We loaded all the cool spatial data from GeoPackage files. Hexes, speed limit zones, parkings, and forbidden zones. Yeah, we got it all covered!
-   - CSV files also gave us additional data like speed median, scooters at parkings, routes hex, road index, and clashes. We needed all that juicy information!
+   - We loaded spatial data from various sources, including GeoPackage files and CSV files. This data included details about hexes, speed limit zones, parkings, forbidden zones, speed medians, scooters at parkings, routes hex, road index, and clashes. We left no stone unturned when it came to data collection!
 
 2. Data Processing 🔄:
-   - We merged different DataFrames based on common column values. Hexes with routes_hex? Yeah, we made it happen!
+   - Our data processing phase involved merging different datasets based on common column values. We combined information from hexes with routes_hex to create a comprehensive picture of the road network.
 
 3. Geospatial Analysis 🌍:
-   - We played around with coordinates of nodes and edges. Extracting them, manipulating them. All that fancy geospatial stuff!
-   - We even assigned hexagon values to roads based on the closest hexagon. It's all about precision, you know!
+   - We leveraged geospatial analysis techniques to extract coordinates of nodes and edges from the loaded graph data. This allowed us to perform manipulations and processing on the geospatial data. For example, we combined road attributes into a single column and split linestrings for improved accuracy.
 
 4. Graph Loading and Analysis 🚂:
-   - We loaded and downloaded a graph from OpenStreetMap (OSM). We needed to know everything about the roads, railways, and subway crossings!
-   - With our graph analysis skills, we retrieved some cool graph information. We're like detectives, finding hidden treasures in the data!
+   - To gain a deeper understanding of the road network, we loaded or downloaded a graph from OpenStreetMap (OSM) based on a specified place name and filter expression. This graph data enabled us to perform analysis on railway and subway crossings, providing valuable insights.
 
-5. Routing Algorithm using A* 🗺️:
-   - Hold on tight! This is where the magic happens. We implemented the super-smart A* algorithm to find the absolute best route for electric scooters.
-   - We took into account everything that matters - distance, road conditions, traffic congestion, and even charging stations. Scooters gotta stay charged, you know!
-   - Our algorithm is so smart, it can dynamically update the route based on real-time data and changing conditions. Nothing can stop us!
+5. A* Algorithm for Route Optimization 🗺️:
+   - The highlight of our project was the implementation of the A* algorithm for finding the optimal routes for electric scooters. We considered factors such as distance, road conditions, traffic congestion, and the availability of charging stations. Our algorithm dynamically adjusted the routes based on real-time data, ensuring the most efficient and practical paths.
 
-6. Optimization Techniques ⚡:
-   - We didn't settle for good, we aimed for greatness! We applied some optimization techniques to make our routing algorithm even better.
-   - Battery life, charging time, user preferences - we considered it all. We fine-tuned parameters and heuristics for that extra oomph!
+6. Data Filling Algorithm using Decision Trees ⚙️:
+   - In addition to route optimization, we developed an algorithm to fill missing data in our datasets using decision tree models. This algorithm involved preparing the data, finding the best hyperparameters through grid search, training the model, and then using it to predict missing values based on available features. It ensured that our datasets were complete and ready for analysis.
 
 7. Results and Evaluation 📈:
-   - We crunched the numbers and analyzed the heck out of the optimal routes we generated. We needed to know how awesome they are!
-   - We compared our solution with existing routing methods. Spoiler alert: We rocked it! Travel time, user satisfaction, and operational efficiency, all off the charts!
+   - We meticulously analyzed the generated optimal routes, comparing them with existing routing methods. Our evaluation criteria included travel time, user satisfaction, and operational efficiency. The results of our project were outstanding, surpassing expectations and setting new standards in electric scooter routing.
 
 8. Conclusion 🎉:
-   - It's time to wrap things up. We summarized our amazing findings and insights from the optimal electric scooter routing solution.
-   - We even discussed future enhancements and applications because we're all about the future. We're trailblazers, paving the way for awesome electric scooter journeys!
-   - Oh, and let's not forget to thank our awesome team members, contributors, and sponsors. We couldn't have done it without them!
+   - In conclusion, our Optimal Electric Scooter Routing Project delivered cutting-edge solutions for finding the best routes for electric scooters. We explored various data sources, employed advanced algorithms, and utilized optimization techniques to ensure efficient and enjoyable scooter journeys. This project represents our dedication to innovation and our commitment to revolutionizing urban mobility.
 
-## Algorithm for Filling Missing Values using Decision Trees:
+Thank you for exploring our project and joining us on this electrifying journey! 🚀💡🔋
 
-Hey, we had another trick up our sleeves! We had an algorithm to fill in missing values in our data using decision tree models. Check it out:
-
-1. Prepare data:
-   - We made a copy of the data, focusing on the target column with non-null values. Gotta keep things organized!
-   - We separated the features and the target variable. It's like separating the cool from the cooler!
-
-2. Find best hyperparameters:
-   - We did some grid searching with cross-validation to find the perfect hyperparameters for our decision tree model.
-   - We used mean squared error as our scoring metric. Can't settle for anything less!
-
-3. Train the best model:
-   - Ah, the moment of truth! We retrieved the best model from our grid search results. It's the superstar model!
-
-4. Fill missing values:
-   - When we found rows with missing values, we put our model to work. It predicted those missing values like a boss using the other available features.
-   - We replaced those predicted values in the original data. Voila! Missing values no more!
-
-5. Rinse and repeat:
-   - We repeated steps 2-4 for each column with missing values. We made sure nothing slipped through the cracks!
-
-Our algorithm is like a magician, making missing values disappear using decision tree models. Each column is treated independently, and the predictions are based on the available features. It's all about making our data complete and awesome!
-
-So, buckle up and get ready for the electrifying world of optimal electric scooter routing! 🚀💡🔋
