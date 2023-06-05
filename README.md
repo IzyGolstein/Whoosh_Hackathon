@@ -5,7 +5,10 @@ Welcome to the Optimal Electric Scooter Routing Project! 🛴💨
 
 In this project, we aimed to develop an innovative solution for finding the best routes for electric scooters. Our focus was on optimizing distance, comfort of road, traffic, and parking spot tracking. Let's take a look at the key components of our project.
 
-## Project Overview
+## Project Overview!
+
+[hexes_speed](https://github.com/IzyGolstein/Whoosh_Hackathon/assets/112851618/616f7f0c-cf45-4e4a-9c34-f17dc2e2ba0d)
+
 
 1. Data Loading 📊:
    - We loaded geo-data from various sources, including open-source library "osmnx" (OpenStreetMap), data provided by the organizers, open sources of the government of Moscow (used API). This data included details about hexes, speed limit zones, parkings, forbidden zones, speed medians, scooters at parkings, routes hex, road index, clashes, quality of road surface.
