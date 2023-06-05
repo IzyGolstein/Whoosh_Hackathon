@@ -15,7 +15,7 @@ In this project, we aimed to develop an innovative solution for finding the best
 3. Graph Loading and Analysis 🚂:
    - To gain a deeper understanding of the road network, we created a graph from all our data. We needed this graph to realize our algorithm of building optimal/comfortable roads.
 
-   ![Graph](https://github.com/IzyGolstein/Whoosh_Hackathon/assets/112851618/471dcc40-1dfe-4baa-b67c-1bb7acb9de5f | width=400)
+   ![Graph](https://github.com/IzyGolstein/Whoosh_Hackathon/assets/112851618/471dcc40-1dfe-4baa-b67c-1bb7acb9de5f)
 
 4. Data Filling Algorithm using Decision Trees ⚙️:
    - In addition to route optimization, we developed an algorithm to fill missing data in our datasets using decision tree models. This algorithm builds nested deep trees to predict missing values based on available features. It ensured that our datasets were complete and ready for analysis. To illustrate the data filling process, here's a comparison of variables before and after filling:
