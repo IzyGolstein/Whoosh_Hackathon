@@ -7,9 +7,6 @@ In this project, we aimed to develop an innovative solution for finding the best
 
 ## Project Overview!
 
-[hexes_speed](https://github.com/IzyGolstein/Whoosh_Hackathon/assets/112851618/616f7f0c-cf45-4e4a-9c34-f17dc2e2ba0d)
-
-
 1. Data Loading 📊:
    - We loaded geo-data from various sources, including open-source library "osmnx" (OpenStreetMap), data provided by the organizers, open sources of the government of Moscow (used API). This data included details about hexes, speed limit zones, parkings, forbidden zones, speed medians, scooters at parkings, routes hex, road index, clashes, quality of road surface.
 
@@ -25,5 +22,6 @@ In this project, we aimed to develop an innovative solution for finding the best
 5. A* Algorithm for Route Optimization 🗺️:
    - The highlight of our project was the implementation of the A* algorithm for finding the optimal routes for electric scooters. We considered factors such as distance, time,  road conditions, traffic congestion, and the availability of parking. Our algorithm based on Dijkstra's algorithm and uses a few functions of minimization time of road, maximization of comfort etc.
 
+[hexes_speed](https://github.com/IzyGolstein/Whoosh_Hackathon/assets/112851618/616f7f0c-cf45-4e4a-9c34-f17dc2e2ba0d)
 
 
