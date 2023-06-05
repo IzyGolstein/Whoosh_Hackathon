@@ -4,7 +4,7 @@ Welcome to the Optimal Electric Scooter Routing Project! 🛴💨
 
 In this project, we aimed to develop an innovative solution for finding the best routes for electric scooters. Our focus was on optimizing distance, road comfort, traffic, and parking spot tracking. Let's take a look at the key components of our project.
 
-## Project Overview!
+## Project Overview
 
 1. Data Loading 📊:
    - We loaded geo-data from various sources, including the open-source library "osmnx" (OpenStreetMap), data provided by the organizers, and open sources of the government of Moscow (used API). This data included details about hexes, speed limit zones, parkings, forbidden zones, speed medians, scooters at parkings, routes hex, road index, clashes, and the quality of road surface.
