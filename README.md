@@ -14,20 +14,26 @@ In this project, we aimed to develop an innovative solution for finding the best
 
 3. Graph Loading and Analysis 🚂:
    - To gain a deeper understanding of the road network, we created a graph from all our data. We needed this graph to realize our algorithm of building optimal/comfortable roads.
+   ![Moscow_Graph](https://github.com/IzyGolstein/Whoosh_Hackathon/assets/112851618/22e05f43-0747-4d9c-83d3-d11310ebf821)
 
-   ![Graph](https://github.com/IzyGolstein/Whoosh_Hackathon/assets/112851618/471dcc40-1dfe-4baa-b67c-1bb7acb9de5f)
+4. **Data Filling Algorithm using Decision Trees** ⚙️:
+   - In addition to route optimization, we developed an algorithm to fill missing data in our datasets using decision tree models. This algorithm builds nested deep trees to predict missing values based on available features. To illustrate the data filling process, here's a comparison of variables **before and after filling**, which ensured that our datasets were complete and ready for analysis:
 
-4. Data Filling Algorithm using Decision Trees ⚙️:
-   - In addition to route optimization, we developed an algorithm to fill missing data in our datasets using decision tree models. This algorithm builds nested deep trees to predict missing values based on available features. It ensured that our datasets were complete and ready for analysis. To illustrate the data filling process, here's a comparison of variables before and after filling:
 
-   Before Filling:
-   ![Before](https://github.com/IzyGolstein/Whoosh_Hackathon/assets/112851618/72337b91-1c41-45c8-883b-7d856847ef36 | width=400)
+   <div style="display: flex;">
+      <div style="flex: 50%; padding-right: 10px;">
+         <p align="center"><strong>Before Filling</strong></p>
+         <img src="https://github.com/IzyGolstein/Whoosh_Hackathon/assets/112851618/ed0ca1b7-c4fb-4fb7-b73b-6e5287a34c3c" alt="drawing" />
+      </div>
+      <div style="flex: 50%; padding-left: 10px;">
+         <p align="center"><strong>After Filling</strong></p>
+         <img src="https://github.com/IzyGolstein/Whoosh_Hackathon/assets/112851618/e915b073-1429-4605-8acb-5357badf04b9" alt="drawing" />
+      </div>
+   </div>!
 
-   After Filling:
-   ![After](https://github.com/IzyGolstein/Whoosh_Hackathon/assets/112851618/84503b3b-1f92-44a0-8815-aa13dca33d47 | width=400)
+
 
 5. A* Algorithm for Route Optimization 🗺️:
    - The highlight of our project was the implementation of the A* algorithm for finding the optimal routes for electric scooters. We considered factors such as distance, time, road conditions, traffic congestion, and the availability of parking. Our algorithm is based on Dijkstra's algorithm and uses several functions for minimizing road time, maximizing comfort, etc. The result of algorithm usage is presented below:
 
-   ![Optimal Route](https://github.com/IzyGolstein/Whoosh_Hackathon/assets/112851618/e637038c-e4d5-4130-b302-bd5b37d0f256 | width=400)
-
+   ![Optimal Route](https://github.com/IzyGolstein/Whoosh_Hackathon/assets/112851618/e637038c-e4d5-4130-b302-bd5b37d0f256)
