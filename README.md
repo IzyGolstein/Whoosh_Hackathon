@@ -34,6 +34,6 @@ In this project, we aimed to develop an innovative solution for finding the best
 
 
 5. A* Algorithm for Route Optimization 🗺️:
-   - The highlight of our project was the implementation of the A* algorithm for finding the optimal routes for electric scooters. We considered factors such as distance, time, road conditions, traffic congestion, and the availability of parking. Our algorithm is based on Dijkstra's algorithm and uses several functions for minimizing road time, maximizing comfort, etc. The result of algorithm usage is presented below:
+   - The highlight of our project was the implementation of the A* algorithm for finding optimal routes for electric scooters. We considered factors such as distance, time, road conditions, traffic congestion, and the parking availability. Furthermore, we developed our own weighted features, including cumulative convenience. Our algorithm is based on Dijkstra’s algorithm, but it incorporates heuristics to improve the search. The main purpose is to minimize or maximize the desired target, such as road time, comfort, etc. The result of using the algorithm is presented below:
 
    ![Optimal Route](https://github.com/IzyGolstein/Whoosh_Hackathon/assets/112851618/e637038c-e4d5-4130-b302-bd5b37d0f256)
