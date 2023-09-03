@@ -1,0 +1,155 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="https://js.api.here.com/v3/3.1/mapsjs-ui.css" />
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-core.js"></script>
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-service.js"></script>
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-ui.js"></script>
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js"></script>
+</head>
+<body>
+    <style>
+        #map {
+            width: 95%;
+            height: 450px;
+            background: grey;
+        }
+
+        #panel {
+            width: 100%;
+            height: 400px;
+        }
+    </style>
+    <div class="page-header">
+        <h1>Change map style at runtime</h1>
+        <p>Change a style of the map feature when map is instantiated</p>
+    </div>
+    <p>This example shows how to change map feature style during the map runtime. The map is loaded with the default "normal.map" style, after that
+      the color of the features "landuse.park" and "landuse.builtup" is changed to the dark green and the dark grey accordingly. 
+    </p>
+    <div id="map"></div>
+    <h3>Code</h3>
+    <p>The code below adds a <codeph>change</codeph> event listener to the instence of the <code>H.map.Style</code> associated with the
+      layer's provider. Within this listener the section of the map style is extracted and modified and merged back to the original style.
+      That results in the changed colors for the "landuse.park" and "landuse.builtup" map features.
+    </p>
+    <script>
+        /**
+         * The function add the "change" event listener to the map's style
+         * and modifies colors of the map features within that listener.
+         * @param  {H.Map} map      A HERE Map instance within the application
+         */
+        function changeFeatureStyle(map){
+          // get the vector provider from the base layer
+          var provider = map.getBaseLayer().getProvider();
+        
+          // get the style object for the base layer
+          var parkStyle = provider.getStyle();
+        
+          var changeListener = (evt) => {
+            if (parkStyle.getState() === H.map.Style.State.READY) {
+              parkStyle.removeEventListener('change', changeListener);
+        
+              // query the sub-section of the style configuration
+              // the call removes the subsection from the original configuration
+              var parkConfig = parkStyle.extractConfig(['landuse.park', 'landuse.builtup']);
+              // change the color, for the description of the style section
+              // see the Developer's guide
+              parkConfig.layers.landuse.park.draw.polygons.color = '#2ba815'
+              parkConfig.layers.landuse.builtup.draw.polygons.color = '#676d67'
+        
+              // merge the configuration back to the base layer configuration
+              parkStyle.mergeConfig(parkConfig);
+            }
+          };
+        
+          parkStyle.addEventListener('change', changeListener);
+        }
+        
+        /**
+         * Boilerplate map initialization code starts below:
+         */
+        
+        //Step 1: initialize communication with the platform
+        // In your own code, replace variable window.apikey with your own apikey
+        
+        var platform = new H.service.Platform({
+          apikey: 'API_KEY'
+        });
+        var defaultLayers = platform.createDefaultLayers();
+        
+        //Step 2: initialize a map
+        var map = new H.Map(document.getElementById('map'),
+          defaultLayers.vector.normal.map, {
+          center: {lat: 52.51477270923461, lng: 13.39846691425174},
+          zoom: 13,
+          pixelRatio: window.devicePixelRatio || 1
+        });
+        // add a resize listener to make sure that the map occupies the whole container
+        window.addEventListener('resize', () => map.getViewPort().resize());
+        
+        //Step 3: make the map interactive
+        // MapEvents enables the event system
+        // Behavior implements default interactions for pan/zoom (also on mobile touch environments)
+        var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
+        
+        // Create the default UI components
+        var ui = H.ui.UI.createDefault(map, defaultLayers);
+        
+        // Now use the map as required...
+        changeFeatureStyle(map);</script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Linestring Roads Visualization</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.css" />
+  <script src="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/leaflet-geometryutil@0.5.0/dist/leaflet.geometryutil.min.js"></script>
+</head>
+<body>
+  <div id="map" style="height: 400px;"></div>
+
+  <script>
+    // Sample GeoJSON data representing Linestring roads
+    var linestringRoads = {
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [37.510257, 55.6316374],
+              [37.510219, 55.6314717],
+              // Add more coordinates for other road segments
+            ]
+          },
+          "properties": {}
+        }
+      ]
+    };
+
+    var map = L.map('map').setView([55.6316374, 37.510257], 12);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: 'Map data &copy; <a href="https://www.openstreetmap.org">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    L.geoJSON(linestringRoads, {
+      style: {
+        color: 'red',
+        weight: 3,
+        opacity: 1
+      }
+    }).addTo(map);
+
+  </script>
+</body>
+</html>
